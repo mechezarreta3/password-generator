@@ -25,7 +25,7 @@ Welcome to my **Password Generator** project! This handy command-line tool, I bu
 Clone the repository and navigate to the project directory:
 
 ```bash
-git clone https://github.com/yourusername/password-generator.git
+git clone https://github.com/mechezarreta3/password-generator.git
 cd password-generator
 ```
 
@@ -50,9 +50,12 @@ Without any flags, the tool generates a 20-character password based on alphabeti
 ### Custom Options
 Customize your password using flags:
 
--l: Password length (Default: 20)
--d: Include at least one digit (Default: true)
--s: Include at least one special character (Default: true)
+`-l`: Password length (**Default: 20**)
+
+`-d`: Include at least one digit (**Default: false**)
+
+`-s`: Include at least one special character (**Default: false**)
+
 For example, to generate a 16-character password that includes both digits and special characters:
 
 ```bash
