@@ -1,0 +1,26 @@
+name: password-generator Tests
+
+on:
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up Go 1.13
+              uses: actions/setup-go@v2
+              with:
+                go-version: '1.13'
+            
+            - name: Download Dependencies
+              run: go mod download
+            
+            - name: Run tests
+              run: go test ./...
