@@ -7,9 +7,9 @@ import (
 	"github.com/mechezarreta3/password-generator/pkg/password" // adjust the import path as needed
 )
 
-func TestGeneratePasswordLength(t *testing.T) {
+func TestGenerateLength(t *testing.T) {
 	length := 20
-	pw, err := password.GeneratePassword(length, false, false)
+	pw, err := password.Generate(length, false, false)
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
@@ -18,9 +18,9 @@ func TestGeneratePasswordLength(t *testing.T) {
 	}
 }
 
-func TestGeneratePasswordContainsAlpha(t *testing.T) {
+func TestGenerateContainsAlpha(t *testing.T) {
 	length := 20
-	pw, err := password.GeneratePassword(length, false, false)
+	pw, err := password.Generate(length, false, false)
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
@@ -32,9 +32,9 @@ func TestGeneratePasswordContainsAlpha(t *testing.T) {
 	}
 }
 
-func TestGeneratePasswordContainsDigit(t *testing.T) {
+func TestGenerateContainsDigit(t *testing.T) {
 	length := 20
-	pw, err := password.GeneratePassword(length, true, false)
+	pw, err := password.Generate(length, true, false)
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
@@ -46,9 +46,9 @@ func TestGeneratePasswordContainsDigit(t *testing.T) {
 	}
 }
 
-func TestGeneratePasswordContainsSpecial(t *testing.T) {
+func TestGenerateContainsSpecial(t *testing.T) {
 	length := 20
-	pw, err := password.GeneratePassword(length, false, true)
+	pw, err := password.Generate(length, false, true)
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
@@ -61,9 +61,9 @@ func TestGeneratePasswordContainsSpecial(t *testing.T) {
 	}
 }
 
-func TestGeneratePasswordLengthTooShort(t *testing.T) {
+func TestGenerateLengthTooShort(t *testing.T) {
 	// When both includeDigits and includeSpecial are true, the minimum acceptable length is 2.
-	_, err := password.GeneratePassword(1, true, true)
+	_, err := password.Generate(1, true, true)
 	if err == nil {
 		t.Error("expected an error for insufficient length, but got none")
 	}

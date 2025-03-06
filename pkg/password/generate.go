@@ -10,7 +10,7 @@ import (
 // It always uses letters (both uppercase and lowercase).
 // If includeDigits is true, it forces at least one digit to be present.
 // If includeSpecial is true, it forces at least one special character to be present.
-func GeneratePassword(length int, includeDigits bool, includeSpecial bool) (string, error) {
+func Generate(length int, includeDigits bool, includeSpecial bool) (string, error) {
 	letters := "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	digits := "0123456789"
 	specialChars := "!@#$%^&*()-_=+[]{}|;:,.<>/?"

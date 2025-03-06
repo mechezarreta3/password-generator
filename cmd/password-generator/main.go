@@ -17,7 +17,7 @@ func main() {
 	flag.Parse()
 
 	// Generate the password with the provided flags.
-	pwd, err := password.GeneratePassword(*lengthPtr, *includeDigits, *includeSpecial)
+	pwd, err := password.Generate(*lengthPtr, *includeDigits, *includeSpecial)
 	if err != nil {
 		fmt.Println("Error generating password:", err)
 		return
